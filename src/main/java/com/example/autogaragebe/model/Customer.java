@@ -28,17 +28,21 @@ public class Customer {
     @OneToMany(mappedBy= "owner", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Car> cars = new ArrayList<>();
 
+    @JsonIgnoreProperties("owner")
+    @OneToMany(mappedBy = "owner", fetch =  FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Invoice> invoices = new ArrayList<>();
 
-   public Customer(){
-   }
+    public Customer(){
+    }
 
-    public Customer(Long id, String firstName, String lastName, String phoneNumber, String email, List<Car> cars) {
+    public Customer(Long id, String firstName, String lastName, String phoneNumber, String email, List<Car> cars, List<Invoice> invoices) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.cars = cars;
+        this.invoices = invoices;
 
     }
 }

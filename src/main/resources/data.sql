@@ -1,3 +1,13 @@
+INSERT INTO users (username, password, enabled, email)
+VALUES ('monteur', '$2y$10$pn4mvxgRMiFSelR/8LbTE.VgPVF4eYQFR0bd.vmkznvnesWfnUwxK', TRUE, 'monteur@gmail.com');
+INSERT INTO users (username, password, enabled, email)
+VALUES('administratief_medewerker', '$2y$10$pn4mvxgRMiFSelR/8LbTE.VgPVF4eYQFR0bd.vmkznvnesWfnUwxK', TRUE, 'medewerker@gmail.com');
+
+INSERT INTO authorities(username, authority)
+VALUES('monteur', 'ROLE_MONTEUR');
+INSERT INTO authorities(username, authority)
+VALUES('administratief_medewerker', 'ROLE_ADMINISTRATIEFMEDEWERKER');
+
 
 INSERT INTO customers (first_name, last_name, phone_number, email)
 VALUES('Silvia', 'van Lingen', '0612345678', 'emailtje@gmail.com');
@@ -62,3 +72,12 @@ INSERT INTO parts(name, price, repair_id)
 VALUES ('Oliefilter vervangen', 25.00, 2);
 INSERT INTO parts(name, price, repair_id)
 VALUES ('Algehele controle', 50.00, 3);
+
+
+INSERT INTO invoices(license_plate, customer_id)
+VALUES('G707NX', 1);
+INSERT INTO invoices(license_plate, customer_id)
+VALUES('288XX8', 2);
+INSERT INTO invoices(license_plate, customer_id)
+VALUES('HNFG47', 3);
+
