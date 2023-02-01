@@ -25,4 +25,8 @@ public class CustomerDto {
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
+
+    public CustomerDto() {
+
+    }
 }

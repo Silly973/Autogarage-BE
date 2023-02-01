@@ -18,13 +18,17 @@ public class CarDto {
     private String model;
     private String constructionYear;
 
-
-    public CarDto(String brand, String model, String constructionYear, String licensePlate) {
-       this.id = id;
+    public CarDto(String licensePlate, Long id, String brand, String model, String constructionYear) {
+        LicensePlate = licensePlate;
+        this.id = id;
         this.brand = brand;
         this.model = model;
         this.constructionYear = constructionYear;
-        this.LicensePlate = licensePlate;
     }
 
+
+
+    public CarDto() {
+
+    }
 }

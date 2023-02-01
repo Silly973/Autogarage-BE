@@ -48,13 +48,13 @@ public class CarService {
 
 
           public Long createCar(CarDto carDto){
-              String licenseplate = carDto.getLicensePlate();
+              String licensePlate = carDto.getLicensePlate();
               String constructionYear = carDto.getConstructionYear();
               String brand = carDto.getBrand();
               String model = carDto.getModel();
               List<Car> cars = new ArrayList<>();
 
-              cars.add(carRepository.findAllByLicensePlateContainingIgnoreCase(licenseplate));
+              cars.add(carRepository.findAllByLicensePlateContainingIgnoreCase(licensePlate));
 
               if (cars.size() != 1) {
                   throw new BadRequestException("Licenseplate already exists!!");

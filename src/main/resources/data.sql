@@ -27,7 +27,7 @@ VALUES('HNFG47', 3,  'Ford', 'Fiesta',2017);
 INSERT INTO inspections(appointment_date, appointment_status, car_id)
 VALUES ('2022-12-19','CUSTOMER_APPROVED', 1);
 INSERT INTO inspections(appointment_date, appointment_status, car_id)
-VALUES ('2022-12-21','REPAIR_COMPLETED', 2);
+VALUES ('2022-12-21','APPOINTMENT_SCHEDULED', 2);
 INSERT INTO inspections(appointment_date, appointment_status, car_id)
 VALUES ('2022-12-20','CUSTOMER_DISAPPROVED', 3);
 
@@ -55,23 +55,37 @@ VALUES ('Niet akkoord na inspectie', 3);
 
 
 INSERT INTO parts(name, price, repair_id)
+VALUES ('Accu vervangen', 50.00, 1);
+INSERT INTO parts(name, price, repair_id)
 VALUES ('Accu Bosch S4 028', 110.87, 1);
 INSERT INTO parts(name, price, repair_id)
 VALUES ('Remschijven schoongemaakt', 42.95, 1);
 INSERT INTO parts(name, price, repair_id)
 VALUES ('Koelvloeistof bijgevuld', 8.25, 1);
 INSERT INTO parts(name, price, repair_id)
+VALUES ('Koelvloeistof per 500 ml', 10.00, 1);
+INSERT INTO parts(name, price, repair_id)
 VALUES ('Wissel banden zomer/winter', 85.00, 1);
+INSERT INTO parts(name, price, repair_id)
+VALUES ('Opslag banden', 45.00, 1);
 INSERT INTO parts(name, price, repair_id)
 VALUES ('Luchtfilter vervangen', 25.00, 2);
 INSERT INTO parts(name, price, repair_id)
+VALUES ('Luchtfilter no.2', 9.00, 2);
+INSERT INTO parts(name, price, repair_id)
 VALUES ('Wissel banden zomer/winter', 85.00, 2);
 INSERT INTO parts(name, price, repair_id)
-VALUES ('Ruitenwisservloeistof per 500 ml', 25.00, 2);
+VALUES ('Opslag banden', 45.00, 2);
 INSERT INTO parts(name, price, repair_id)
-VALUES ('Oliefilter vervangen', 25.00, 2);
+VALUES ('Ruitenwisservloeistof vervangen', 8.00, 2);
 INSERT INTO parts(name, price, repair_id)
-VALUES ('Algehele controle', 50.00, 3);
+VALUES ('Ruitenwisservloeistof per 500 ml', 6.00, 2);
+INSERT INTO parts(name, price, repair_id)
+VALUES ('Oliefilter vervangen', 15.00, 2);
+INSERT INTO parts(name, price, repair_id)
+VALUES ('Oliefilter no. 7O0012', 10.00, 2);
+INSERT INTO parts(name, price, repair_id)
+VALUES ('Algehele controle', 41.30, 3);
 
 
 INSERT INTO invoices(license_plate, customer_id)
