@@ -1,0 +1,1943 @@
+{
+	"info": {
+		"_postman_id": "c965d5ca-3283-4e76-932c-eead7c6522ef",
+		"name": "Autogarage",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23932066"
+	},
+	"item": [
+		{
+			"name": "Authenticate POST monteur",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"monteur\",\r\n    \"password\": \"password\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate POST administratief_medewerker",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"administratief_medewerker\",\r\n    \"password\": \"password\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/api/v1/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"api",
+						"v1",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authenticate POST wrong user",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"administratief\",\r\n    \"password\": \"password\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User New Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Get User monteur",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Get User  adm.medewerker",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/users/administratief_medewerker",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users",
+						"administratief_medewerker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User POST new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"monteur\",\r\n    \"password\": \"$2y$10$pn4mvxgRMiFSelR/8LbTE.VgPVF4eYQFR0bd.vmkznvnesWfnUwxK\",\r\n    \"enabled\": true,\r\n    \"email\": \"monteur@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Auth POST new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User PATCH update password",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Frank",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"Password@2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/users/Frank/password",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users",
+						"Frank",
+						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User DELETE",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/users/Frank/authorities/role_monteur",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"users",
+						"Frank",
+						"authorities",
+						"role_monteur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/cars/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car GET by licenseplate",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/cars/288xx8",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars",
+						"288xx8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car POST new Car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"id\": \"5\",\r\n     \"brand\": \"Ford\",\r\n     \"model\": \"F\",\r\n     \"versionYear\": \"2000\",\r\n     \"licensePlate\": \"TN234Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car PUT by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": \"3\",\r\n     \"brand\": \"Ford\",\r\n     \"model\": \"Fiesta\",\r\n     \"versionYear\": \"2017\",\r\n     \"licensePlate\": \"TN234T\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/cars/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car PATCH LP",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": \"3\",\r\n     \"brand\": \"Ford\",\r\n     \"model\": \"Fiesta\",\r\n     \"versionYear\": \"2017\",\r\n     \"licensePlate\": \"TN239T\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/cars/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Car DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/cars/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"cars",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer GET by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/customers/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Get Car by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/customers/1/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers",
+						"1",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Get By lastName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/customers?lastname= van Lingen",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers"
+					],
+					"query": [
+						{
+							"key": "lastname",
+							"value": " van Lingen"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer  POST new customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 2,\r\n        \"firstName\": \"Mariska\",\r\n        \"lastName\": \"van Kolk\",\r\n        \"phoneNumber\": \"06155587777\",\r\n        \"email\": \"Kolk@gmail.com\",\r\n        \"cars\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/customers",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 2,\r\n        \"firstName\": \"John\",\r\n        \"lastName\": \"van de Heuvel\",\r\n        \"phoneNumber\": \"0611111111\",\r\n        \"email\": \"heuvelig@gmail.com\",\r\n        \"cars\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/customers/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer PATCH by id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n        \"firstName\": \"Mariska\",\r\n        \"lastName\": \"van de Schaik\",\r\n        \"phoneNumber\": \"0655555555\",\r\n        \"email\": \"Schaik@gmail.com\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/customers/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer POST add Car by id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"licensePlate\": \"ZR211Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/customers/3/cars",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers",
+						"3",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/customers/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspections New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-9\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/inspections",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"inspections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspection GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/inspections/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"inspections",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspections POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-31\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/inspections",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"inspections"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspections PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-31\",\r\n        \"appointmentStatus\": \"REPAIR_COMPLETED\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/inspections/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"inspections",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspections PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \"appointmentStatus\": \"CUSTOMER_DISAPPROVED\"   \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/inspections/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"inspections",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Inspections DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/inspections/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"inspections",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-9\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/repairs",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair GET by date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-9\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/repairs?date=2022-12-20",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2022-12-20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair GET by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/repairs/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2,\r\n        \"appointmentDate\": \"2022-12-17\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/repairs",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"id\": 2,\r\n    \"appointmentDate\": \"2022-12-24\",\r\n    \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n    \"parts\": []\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/repairs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1,\r\n    \"appointmentDate\": \"2022-11-19\",\r\n    \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n    \"parts\": []\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/repairs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Repair DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/repairs/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"repairs",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deficiencies New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-9\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/deficiencies",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"deficiencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deficiencies GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/deficiencies/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"deficiencies",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deficiencies POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \r\n        \"description\": \"Remolie vervangen\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/deficiencies",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"deficiencies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deficiencies PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 5,\r\n        \"description\": \"Ruiterwisvloeistof bijvullen (zomer)\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/deficiencies/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"deficiencies",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deficiencies  PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \r\n        \"description\": \"Ruiterwisvloeistof bijvullen\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/deficiencies/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"deficiencies",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deficiencies  DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \r\n        \"description\": \"Ruiterwisvloeistof bijvullen\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/deficiencies/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"deficiencies",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts New Request",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-9\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/parts",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"appointmentDate\": \"2022-12-9\",\r\n        \"appointmentStatus\": \"APPOINTMENT_SCHEDULED\",\r\n        \"parts\": []\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/parts/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"parts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts POST ",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Remmen grondig gereinigd\",\r\n    \"price\": 35.25\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/parts",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"parts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts PUT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Luchtfilter gereinigd\",\r\n    \"price\": 25.0\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/parts/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"parts",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts PATCH",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"name\": \"Ruiterwisservloestof winter bijgevuld\",\r\n    \"price\": 5.75\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/parts/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"parts",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parts  DELETE",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/parts/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"parts",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice not ready GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice not approved GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice GET by id not found",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invoice DELETE by id",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarInvoice Upload PDF",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/yogab/Desktop/InvoiceVoorbeeld.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/2/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"2",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CarInvoice Download PDF",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/yogab/Desktop/Invoice voorbeeld.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/carInvoice/2/download",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"carInvoice",
+						"2",
+						"download"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoices New Request",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8085/invoices",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoices GET by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/yogab/Desktop/Invoice voorbeeld.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Invoices GET by id no invoice available",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "administratief_medewerker",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/yogab/Desktop/Invoice voorbeeld.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8085/invoices/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8085",
+					"path": [
+						"invoices",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
