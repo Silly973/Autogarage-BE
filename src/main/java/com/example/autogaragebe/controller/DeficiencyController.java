@@ -33,7 +33,7 @@ public class DeficiencyController {
     public ResponseEntity<Object> createDeficiency(@Valid @RequestBody DeficiencyDto deficiencyDto) {
         Long newId = deficiencyService.createDeficiency(deficiencyDto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(newId).toUri();
-        return ResponseEntity.created(uri).body(uri);
+        return ResponseEntity.created(uri).build();
 
     }
 

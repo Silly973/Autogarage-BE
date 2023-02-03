@@ -26,17 +26,16 @@ public class CustomerController {
 
     }
 
-    @GetMapping(value = "")
-    public ResponseEntity<Object>getCustomers(@RequestParam(required = false)String lastName){
-
-        if (lastName == null || lastName.isEmpty()){
+    @GetMapping(value =  "")
+    public ResponseEntity<Object> getCustomers(@RequestParam(required = false) String lastName) {
+        if (lastName == null || lastName.isEmpty()) {
             return ResponseEntity.ok(customerService.getAllCustomers());
-
         } else {
             return ResponseEntity.ok(customerService.getCustomerByLastName(lastName));
+
+
         }
     }
-
 
     //Post
     @PostMapping(value = "")

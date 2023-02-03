@@ -56,6 +56,10 @@ public class InvoiceService {
         }
     }
 
+    public Object getAllInvoicess() {
+        return invoiceRepository.findAll();
+    }
+
 
     public Map<String, Object> getCarInvoice(Long id) {
         Optional<Car> optionalCar = carRepository.findById(id);
@@ -191,6 +195,9 @@ public class InvoiceService {
         }
     }
 
+////////////////////////////////////
 
 
+
+    ////////////////////////////////
 }

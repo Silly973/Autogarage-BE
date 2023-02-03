@@ -31,6 +31,11 @@ public class InvoiceController {
         return ResponseEntity.ok(invoiceService.getInvoice(id));
     }
 
+    @GetMapping(value="")
+    public ResponseEntity<Object>getAllInvoices(){
+        return ResponseEntity.ok(invoiceService.getAllInvoicess());
+}
+
 
     @GetMapping(value = "carInvoice/{id}")
     public ResponseEntity<Object> getCarInvoice(@PathVariable Long id) {
