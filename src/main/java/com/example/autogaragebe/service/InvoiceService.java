@@ -194,10 +194,4 @@ public class InvoiceService {
             throw new RecordNotFoundException("No invoice found with id: " + id);
         }
     }
-
-////////////////////////////////////
-
-
-
-    ////////////////////////////////
 }

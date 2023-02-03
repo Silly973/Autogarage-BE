@@ -22,11 +22,6 @@ import java.util.List;
 public class Repair extends Appointment {
 
 
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private Long id;
-//    private String name;
-//    private double price;
 
     @JsonIgnore
     @ManyToOne

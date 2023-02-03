@@ -74,5 +74,4 @@ public class InvoiceController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"") //getFilename
                 .body(resource);
     }
-
 }

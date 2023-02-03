@@ -19,7 +19,6 @@ public class CarController {
     @Autowired
     private CarService carService;
 
-
     //Get
     @GetMapping(value = "/{id}")
     public ResponseEntity<Object> getCar(@PathVariable Long id) {
