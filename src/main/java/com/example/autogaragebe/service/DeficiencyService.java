@@ -43,7 +43,7 @@ public class DeficiencyService {
     }
 
     public void updateDeficiency(Long id, Deficiency deficiency){
-        Deficiency optionelDeficiency = deficiencyRepository.findById(id).orElse(null);
+        Deficiency optionelDeficiency = deficiencyRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Deficiency not found with id: " + id));
 
         if(!deficiency.getName().isEmpty()){
             optionelDeficiency.setName(deficiency.getName());
@@ -52,7 +52,7 @@ public class DeficiencyService {
     }
 
     public void partialUpdateDeficiency(Long id, Deficiency deficiency){
-        Deficiency optionalDeficiency = deficiencyRepository.findById(id).orElse(null);
+        Deficiency optionalDeficiency = deficiencyRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Deficiency not found with id: " + id));
 
         if (!(deficiency.getName() == null) && !deficiency.getName().isEmpty()){
             optionalDeficiency.setName(deficiency.getName());

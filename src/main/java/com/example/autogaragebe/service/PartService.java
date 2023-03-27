@@ -45,7 +45,7 @@ public class PartService {
 
 
     public void updatePart(Long id, Part part) {
-        Part existingItem = partRepository.findById(id).orElse(null);
+        Part existingItem = partRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Part not found with id: " + id));
 
         if (!part.getName().isEmpty()) {
             existingItem.setName(part.getName());
@@ -57,7 +57,7 @@ public class PartService {
 
 
     public void partialUpdatePart(Long id, Part part){
-        Part optionalPart = partRepository.findById(id).orElse(null);
+        Part optionalPart = partRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Part not found with id: " + id));
 
         if (!(part.getName() == null) && !part.getName().isEmpty()) {
             optionalPart.setName(part.getName());

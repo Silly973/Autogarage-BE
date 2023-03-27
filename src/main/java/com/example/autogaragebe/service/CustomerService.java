@@ -23,7 +23,7 @@ public class CustomerService {
     @Autowired
     private CarRepository carRepository;
 
-    //Get
+
     public Customer getCustomer(Long id){
         Optional<Customer> optionalCustomer = customerRepository.findById(id);
         if(optionalCustomer.isPresent()){
@@ -42,7 +42,7 @@ public class CustomerService {
     }
 
 
-    //Post
+
     public Long createCustomer(CustomerDto customerDto){
         Customer customer = new Customer();
         customer.setFirstName(customerDto.getFirstName());
@@ -54,9 +54,9 @@ public class CustomerService {
         return newCustomer.getId();
     }
 
-    //Put
+
     public void updateCustomer(Long id, Customer customer){
-        Customer optionalCustomer = customerRepository.findById(id).orElse(null);
+        Customer optionalCustomer = customerRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Customer not found with id: " + id));
 
         if (!customer.getFirstName().isEmpty()){
             optionalCustomer.setFirstName(customer.getFirstName());
@@ -75,7 +75,7 @@ public class CustomerService {
     }
 
     public void partialUpdateCustomer(Long id, Customer customer){
-        Customer optionalCustomer = customerRepository.findById(id).orElse(null);
+        Customer optionalCustomer = customerRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Customer not found with id: " + id));
 
         if (!(customer.getFirstName() == null) && !customer.getFirstName().isEmpty()){
             optionalCustomer.setFirstName(customer.getFirstName());
@@ -86,12 +86,12 @@ public class CustomerService {
         customerRepository.save(optionalCustomer);
     }
 
-    //Delete
+
     public void deleteCustomer(Long id){
         customerRepository.deleteById(id);
     }
 
-    //Get customersCar
+
     public Iterable<Car> getCustomersCar(Long id){
         Optional<Customer>optionalCustomer = customerRepository.findById(id);
 
@@ -103,7 +103,7 @@ public class CustomerService {
         }
     }
 
-    //Add customersCar
+
     public void addCustomersCar(Long id , Car car){
         Optional<Customer>optionalCustomer = customerRepository.findById(id);
         if(optionalCustomer.isPresent()){

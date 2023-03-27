@@ -74,7 +74,7 @@ public class CarService {
 
 
     public void updateCar(Long id, Car car){
-        Car optionalCar = carRepository.findById(id).orElse(null);
+        Car optionalCar = carRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Car not found with id: " + id));
 
         if (!car.getLicensePlate().isEmpty()){
             optionalCar.setLicensePlate(car.getLicensePlate());
@@ -93,7 +93,7 @@ public class CarService {
 
 
     public void partialUpdateCar(Long id, Car car){
-        Car optionalCar = carRepository.findById(id).orElse(null);
+        Car optionalCar = carRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Car not found with id: " + id));
         if (!(car.getLicensePlate()==null) && !car.getLicensePlate().isEmpty()){
             optionalCar.setLicensePlate(car.getLicensePlate());
         }
