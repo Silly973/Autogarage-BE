@@ -1,0 +1,61 @@
+package com.example.autogaragebe.controller;
+
+
+import com.example.autogaragebe.dto.InspectionDto;
+import com.example.autogaragebe.service.InspectionService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import javax.validation.Valid;
+import java.net.URI;
+import java.time.LocalDate;
+
+@RestController
+@RequestMapping(value="inspections")
+public class InspectionController {
+
+    @Autowired
+    private InspectionService inspectionService;
+
+    @GetMapping(value = "{id}")
+    public ResponseEntity<Object>getInspection(@PathVariable Long id){
+        return ResponseEntity.ok(inspectionService.getInspection(id));
+    }
+
+
+    @GetMapping(value="")
+    public ResponseEntity<Object>getAllInspections(@RequestParam(value="date", required = false)LocalDate date){
+        return ResponseEntity.ok(inspectionService.getAllInspections(date));
+    }
+
+
+    @PostMapping(value = "")
+    public ResponseEntity<Object>createInspection(@Valid @RequestBody InspectionDto inspectionDto){
+        Long newId = inspectionService.createInspection(inspectionDto);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/id").buildAndExpand(newId).toUri();
+
+        return ResponseEntity.created(location).build();
+    }
+
+    @PutMapping(value = "{id}")
+    public ResponseEntity<Object>updateInspection(@PathVariable Long id, @Valid @RequestBody InspectionDto inspectionDto){
+        inspectionService.updateInspection(id, inspectionDto);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PatchMapping(value = "{id}")
+    public ResponseEntity<Object>partialUpdateInspection(@PathVariable Long id, @Valid @RequestBody InspectionDto inspectionDto){
+        inspectionService.partialUpdateInspection(id, inspectionDto);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping(value = "{id}")
+    public ResponseEntity<Object> deleteInspection(@PathVariable Long id){
+        inspectionService.deleteInspection(id);
+        return ResponseEntity.noContent().build();
+    }
+
+
+}
